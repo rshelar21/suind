@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/common/Layout";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { IDrones } from "../interfaces";
 import { droneData } from "../data";
 import { IoIosArrowForward } from "react-icons/io";
