@@ -12,7 +12,7 @@ const Sidebar = () => {
     navigate("/login");
   };
   return (
-    <div className="py-4 pl-4 pr-6 bg-gray-900 font-ibm-mono">
+    <div className="py-4 pl-4 pr-6 bg-gray-900 font-ibm-mono h-screen relative">
       <div className="flex flex-col w-full justify-between h-full">
         <div>
           <div className="bg-gray-800 p-2 rounded-full w-fit h-fit">

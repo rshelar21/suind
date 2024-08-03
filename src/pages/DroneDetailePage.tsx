@@ -13,7 +13,7 @@ const DroneDetailePage = () => {
 
   useEffect(() => {
     if (id) {
-      const selectedDrone = droneData?.drones?.find((drone) => drone.id === id);
+      const selectedDrone = droneData?.drones?.find((drone) => drone?.id?.toLowerCase() === id);
       setDrone(selectedDrone);
     }
   }, [id]);

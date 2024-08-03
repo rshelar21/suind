@@ -20,7 +20,7 @@ const Layout: React.FC<{
   return (
     <div className="flex w-full h-screen">
       {showSidebar && <Sidebar />}
-      <div className="w-full relative h-full">
+      <div className="w-full overflow-y-auto">
         {showNavbar && <Navbar />}
         {children}
       </div>

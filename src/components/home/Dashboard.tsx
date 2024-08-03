@@ -3,7 +3,7 @@ import { IDrones } from "../../interfaces";
 import { Link } from "react-router-dom";
 import Pills from "../common/Pills";
 
-const CardContainer: React.FC<{
+const DronCard: React.FC<{
   drone: IDrones;
 }> = ({ drone }) => {
   return (
@@ -34,8 +34,8 @@ const Dashboard = () => {
         </p>
         <div className="w-full grid grid-cols-3 gap-6 pt-4">
           {droneData?.drones?.map((drone, index) => (
-            <Link to={`${drone?.id}`} key={`${drone?.id}-${index}`}>
-              <CardContainer key={drone?.id} drone={drone} />
+            <Link to={`/drone/${drone?.id?.toLowerCase()}`} key={`${drone?.id}-${index}`}>
+              <DronCard key={drone?.id} drone={drone} />
             </Link>
           ))}
         </div>

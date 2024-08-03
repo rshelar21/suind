@@ -12,11 +12,12 @@ const Login: React.FC = () => {
     username: "",
     password: "",
   });
+  const [errors, setErrors] = useState("");
 
   const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const user = droneData.users.find(
+      const user = droneData?.users?.find(
         (user) =>
           user.username === loginDetails.username &&
           user.password === loginDetails.password
@@ -24,12 +25,11 @@ const Login: React.FC = () => {
       if (user) {
         localStorage.setItem("auth", JSON.stringify(true));
         navigate("/");
-        console.log("Login successful");
       } else {
         throw new Error("Invalid credentials");
       }
-    } catch (error) {
-      console.log("error found");
+    } catch (error: any) {
+      setErrors(error.message || "Something went wrong");
     }
   };
 
@@ -44,7 +44,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <Layout showSidebar={false}>
+    <Layout>
       <div className="h-screen w-full flex ">
         <div className="w-3/5 h-full ">
           <img
@@ -109,6 +109,13 @@ const Login: React.FC = () => {
                   Sign in
                 </button>
               </form>
+              <p className="">
+                {errors && (
+                  <span className="text-red-500 text-sm font-medium">
+                    {errors}
+                  </span>
+                )}
+              </p>
             </div>
           </div>
         </div>
