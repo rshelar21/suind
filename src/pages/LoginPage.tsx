@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/common/Layout";
 import { droneData } from "../data";
 import { useNavigate } from "react-router-dom";
+import InputWrapper from "../components/common/form/InputWrapper";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -64,44 +65,25 @@ const Login: React.FC = () => {
                 className="flex flex-col gap-y-4"
                 onSubmit={handleSubmitForm}
               >
-                <div className="space-y-2">
-                  <label
-                    htmlFor=""
-                    className="font-medium text-gray-200 text-sm"
-                  >
-                    Username
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full border-none outline-none rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-cyan-600
-                  bg-gray-800 text-white focus:border-transparent
-                  "
-                    name="username"
-                    placeholder="Username"
-                    onChange={handleOnChangeInput}
-                    value={loginDetails?.username}
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label
-                    htmlFor=""
-                    className="font-medium text-gray-200 text-sm font-ibm-mono"
-                  >
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    className="w-full border-none outline-none rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-cyan-600
-                  bg-gray-800 text-white focus:border-transparent
-                  "
-                    name="password"
-                    placeholder="Password"
-                    onChange={handleOnChangeInput}
-                    value={loginDetails?.password}
-                    required
-                  />
-                </div>
+                <InputWrapper
+                  name="username"
+                  value={loginDetails?.username}
+                  onChange={handleOnChangeInput}
+                  placeholder="Username"
+                  isRequired
+                  label="Username"
+                  type="text"
+                />
+
+                <InputWrapper
+                  name="password"
+                  value={loginDetails?.password}
+                  onChange={handleOnChangeInput}
+                  placeholder="Password"
+                  isRequired
+                  label="Password"
+                  type="password"
+                />
                 <button
                   type="submit"
                   className="w-full bg-cyan-500 hover:bg-cyan-600 py-2.5 rounded-md mt-2 font-semibold"
