@@ -4,7 +4,7 @@ import { droneData } from "../data";
 import { useNavigate } from "react-router-dom";
 import InputWrapper from "../components/common/form/InputWrapper";
 
-const Login: React.FC = () => {
+const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const [loginDetails, setLoginDetails] = useState<{
     username: string;
@@ -106,4 +106,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

@@ -1,7 +1,7 @@
 import Dashboard from "../components/home/Dashboard";
 import Layout from "../components/common/Layout";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <Layout showSidebar showNavbar>
       <Dashboard />
@@ -9,4 +9,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
