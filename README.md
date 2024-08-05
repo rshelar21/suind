@@ -1,7 +1,10 @@
 # Docker Settings
 To download the image run the following command
+
 docker pull dev4jack/test-reactapp:0.0.1
+
 Next, to start the container run the following command
+
 docker run -p 3000:3000 dev4jack/test-reactapp:0.0.1
 
 
